@@ -21,7 +21,7 @@ namespace FileLib
                 File.Create(path).Close();
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && userOwned)
                 {
-                    chmod(path, (uint) (UnixFileModes.UserRWX | UnixFileModes.GroupRX | UnixFileModes.OtherRX));
+                    chmod(path, (uint) (UnixFileModes.UserRW | UnixFileModes.GroupRX | UnixFileModes.OtherRX));
                 
                     string sudoUidStr = Environment.GetEnvironmentVariable("SUDO_UID");
                     string sudoGidStr = Environment.GetEnvironmentVariable("SUDO_GID");
